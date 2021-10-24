@@ -9,6 +9,8 @@ python = "^3.8"
 Flask = "^2.0.2"
 twilio = "^7.2.0"
 Pillow = "^8.4.0"
+Flask-SocketIO = "^5.1.1"
+opencv-python = "^4.5.4"
 
 [tool.poetry.dev-dependencies]
 
