@@ -12,8 +12,8 @@ import logging
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
-account_sid = os.environ['ukey']
-auth_token = os.environ['token']
+account_sid = 'AC7906f6bd330e0487e5da6ab255aae866'
+auth_token = '88eece81e9de277ffdb6af479d319147'
 client = Client(account_sid, auth_token)
 
 sockets = []
