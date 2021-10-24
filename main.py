@@ -89,5 +89,4 @@ def get_image():
 def dum_post():
   return 'Never gonna give you up'
 
-port = os.environ['PORT'] if os.environ['PORT'] else 3000
-socketio.run(app, debug=True, host='0.0.0.0', port=port)
+socketio.run(app, debug=True, host='0.0.0.0', port=3000)
