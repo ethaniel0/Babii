@@ -1,0 +1,42 @@
+{
+  "files": {
+    "client/app/README.md": [
+      {
+        "id": "def63fa1-a709-4214-8575-d5abac03ce93",
+        "line": 7,
+        "version": 1,
+        "index": 165
+      }
+    ],
+    "main.py": [
+      {
+        "id": "17b52136-bb0c-4508-bb4f-455cee07d2bb",
+        "line": 58,
+        "version": 1044,
+        "index": 1277
+      }
+    ],
+    "static/index.css": [
+      {
+        "id": "21ec039c-8475-40c8-90c6-88fb6c1ac830",
+        "line": 16,
+        "version": 293,
+        "index": 357
+      }
+    ],
+    "texting.py": [
+      {
+        "id": "1d6ee3cf-3a7e-4dcb-a368-6456d5be861a",
+        "line": 1,
+        "version": 201,
+        "index": 0
+      },
+      {
+        "id": "1a86a347-3e30-4478-ab48-682a9f2dab5d",
+        "line": 1,
+        "version": 201,
+        "index": 0
+      }
+    ]
+  }
+}

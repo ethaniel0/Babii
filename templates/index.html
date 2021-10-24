@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babii</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.17/tailwind.min.css" integrity="sha512-yXagpXH0ulYCN8G/Wl7GK+XIpdnkh5fGHM5rOzG8Kb9Is5Ua8nZWRx5/RaKypcbSHc56mQe0GBG0HQIGTmd8bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="/static/index.css">
+  <link rel="stylesheet" href="/static/nav.css">
+</head>
+<body>
+  <nav id='header' class='absolute left-0 top-0 w-full h-16 bg-gray-200 bg-opacity-80 text-lg z-50 flex flex-row items-center justify-between'>
+    <a href='/' class='logo block text-4xl px-2 h-full flex items-center cursor-pointer transition-colors duration-300 hover:bg-gray-300'>Babii &nbsp; <img src="/static/images/pacifier.png" alt="pacifier" class='w-6 h-6 inline-block'></a>
+    <a href='/login' class='logo block text-4xl px-2 h-full flex items-center cursor-pointer transition-colors duration-300 hover:bg-gray-300'>Log in</a>
+  </nav>
+
+  <div id="main-1" class='h-screen w-full flex relative justify-center items-center bg-no-repeat bg-cover z-0'>
+    <div id='main-img' src="https://www.todaysparent.com/wp-content/uploads/2017/01/tips-for-getting-baby-to-sleep-in-crib-during-naptime-768x432-1507823596.jpg" alt="Baby in crib" class="w-full h-full absolute bg-cover">
+    </div>
+    <h1 class="text-8xl text-center">Let’s make your baby safe.</h1>
+    <a href="#main-2" class='absolute rounded-xl text-6xl text-center bottom-0 mb-8 p-4 bg-blue-300 bg-opacity-80 cursor-pointer'>
+      <span class='mb-1'>See how</span>
+      <i class="fas fa-chevron-down text-3xl"></i>
+    </a>
+  </div>
+
+  <div id='main-2' class='w-full flex flex-col relative justify-start items-center pt-12'>
+    <div class='w-8/12'>
+      <h1 class='text-6xl text-center mb-4'>Keeping your baby’s safe in their crib. Easier than ever before.</h1>
+
+      <div class='h-full flex flex-col justify-center items-center'>
+        
+        <div class='flex w-full items-center mb-12'>
+          <i class="fas fa-camera block text-9xl text-blue-600"></i>
+          <p class='pl-4 text-3xl'>First you clip the CatchCam&trade; to the frame of the crib. </p>
+        </div>
+
+        <div class='w-full flex justify-end items-center mb-12'>
+          <p class='pr-4 text-3xl text-right w-8/12'>Next, the CatchCam&trade; will upload photos to our servers, to see if your baby’s climbing out. Rest assured, your data isn’t shared anywhere.</p>
+          <i class="fas fa-server  block text-9xl text-blue-600"></i>
+        </div>
+
+        <div class='flex w-full items-center mb-12'>
+          <i class="fas fa-sms block text-9xl text-blue-600"></i>
+          <p class='pl-4 text-3xl'>If your baby is detected climbing up, you’ll be sent a notification to alarm you, so you can save the day!</p>
+        </div>
+
+        <a href="/login" class='text-3xl bg-purple-200 p-4 rounded-xl transition-color duration-300 hover:bg-purple-600 hover:text-white mb-8'>Get Started</a>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

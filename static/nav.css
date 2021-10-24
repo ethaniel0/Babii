@@ -1,0 +1,8 @@
+@font-face {
+  font-family: Beanie;
+  src: url("./ReenieBeanie-Regular.ttf");
+}
+
+#header .logo {
+  font-family: Beanie;
+}

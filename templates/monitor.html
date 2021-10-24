@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babii</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.17/tailwind.min.css" integrity="sha512-yXagpXH0ulYCN8G/Wl7GK+XIpdnkh5fGHM5rOzG8Kb9Is5Ua8nZWRx5/RaKypcbSHc56mQe0GBG0HQIGTmd8bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="/static/monitor.css">
+  <link rel="stylesheet" href="/static/nav.css">
+
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+</head>
+<body class='h-screen flex flex-col m-0 box-content'>
+  <nav id='header' class='w-full h-16 bg-gray-200 bg-opacity-80 text-lg z-50 flex flex-row items-center justify-between'>
+    <a href='/' class='logo block text-4xl px-2 h-full flex items-center cursor-pointer transition-colors duration-300 hover:bg-gray-300'>Babii &nbsp; <img src="/static/images/pacifier.png" alt="pacifier" class='w-6 h-6 inline-block'></a>
+    <a href='/login' class='logo block text-4xl px-2 h-full flex items-center cursor-pointer transition-colors duration-300 hover:bg-gray-300'>Rick ∝ Ashley</a>
+  </nav>
+
+  <div style="height: calc(100vh - 4rem)" class='flex bg-gray-900'>
+    <img id='image' src="/static/images/waiting.png" alt="Waiting for image" class="data h-full w-auto">
+    <div class='flex flex-col flex-grow justify-center items-center'>
+      <span style="color: #E0E0E0" class='font-thin text-7xl'>Ashley is <span id='status' class='green'>a-ok</span></span>
+      <br>
+      <span id='emojis' class='text-7xl mb-12'>🥳😴</span>
+      <button style="color: #E0E0E0; border-width: 1px" class='text-4xl font-thin border-gray-100 p-2 bg-gray-50 bg-opacity-30'>Switch to Paul</button>
+      
+    </div>
+
+  </div>
+
+  <script>
+    var socket = io();
+
+    socket.on('img', ({image, climbing}) => {
+      document.getElementById('image').src = image;
+      if (climbing){
+        document.getElementById('status').innerHTML = "climbing!";
+        document.getElementById('status').classList.add('yellow');
+        document.getElementById('status').classList.remove('green');
+      }
+      else {
+        document.getElementById('status').innerHTML = "a-ok!";
+        document.getElementById('status').classList.remove('yellow');
+        document.getElementById('status').classList.add('green');
+      }
+    })
+  </script>
+</body>
+</html>

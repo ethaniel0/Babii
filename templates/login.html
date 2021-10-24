@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babii</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.17/tailwind.min.css" integrity="sha512-yXagpXH0ulYCN8G/Wl7GK+XIpdnkh5fGHM5rOzG8Kb9Is5Ua8nZWRx5/RaKypcbSHc56mQe0GBG0HQIGTmd8bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/nav.css">
+  <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+  <nav id='header' class='absolute left-0 top-0 w-full h-16 bg-gray-200 bg-opacity-80 text-lg z-50 flex flex-row items-center justify-between'>
+    <a href='/' class='logo block text-4xl px-2 h-full flex items-center cursor-pointer transition-colors duration-300 hover:bg-gray-300'>Babii &nbsp; <img src="/static/images/pacifier.png" alt="pacifier" class='w-6 h-6 inline-block'></a>
+  </nav>
+
+  <div class='w-full h-screen flex flex-col justify-center items-center'>
+    <h1 style="font-family: Beanie" class='text-5xl mb-12 text-center'>Less stress, one night at a time.</h1>
+    <div class='flex'>
+      <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mother-son-quotes-1557253200.jpg?crop=0.679xw:1.00xh;0.195xw,0&resize=640:*" alt="Happy mother and child" class='w-52 mr-8'>
+      <div class='flex flex-col justify-around'>
+        <input id='username' type="text" placeholder="username" class='border-b-2 border-black text-3xl mb-8 outline-none focus:border-blue-600'>
+        <input id='password' type="text" placeholder="password" class='border-b-2 border-black text-3xl outline-none focus:border-blue-600'>
+        <input id='pass-confirm' type="text" placeholder="confirm password" class='border-b-2 border-black text-3xl outline-none focus:border-blue-600 hidden'>
+      </div>
+    </div>
+    <br>
+    <a href="/monitor" id='login-button' class='text-2xl bg-blue-200 py-2 px-8 rounded-xl transition-color duration-300 hover:bg-blue-600 hover:text-white mb-8 cursor-pointer'>Login</a>
+    <br>
+    <span id='switch-type' class='text-right text-xl'>Don't have an account? <a onclick="log()" class='text-blue-600 cursor-pointer'>Sign Up</a></span>
+
+  </div>
+
+  <script>
+    let atLogin = true;
+    function log(){
+      if (atLogin){
+        atLogin = false;
+        document.getElementById('pass-confirm').classList.remove('hidden');
+        document.getElementById('password').classList.add('mb-8');
+        document.getElementById('login-button').innerHTML = 'Sign Up';
+        document.getElementById('switch-type').innerHTML = `Have an account? <a onclick="log()" class='text-blue-600 cursor-pointer'>Log In</a>`;
+      }
+      else {
+        atLogin = true;
+        document.getElementById('pass-confirm').classList.add('hidden');
+        document.getElementById('password').classList.remove('mb-8');
+        document.getElementById('login-button').innerHTML = 'Log In';
+        document.getElementById('switch-type').innerHTML = `Don't have an account? <a onclick="log()" class='text-blue-600 cursor-pointer'>Sign Up</a>`;
+      }
+    }
+
+    function logIn(){
+      let username = document.getElementById('username').value;
+      let password = document.getElementById('password');
+      let passConf = document.getElementById('pass-confirm');
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({atLogin, username, password, passConf})
+      }).then(resp => resp.json()).then(json => {
+
+      })
+    }
+  </script>
+  
+  
+</body>
+</html>
