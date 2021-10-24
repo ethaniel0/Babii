@@ -89,4 +89,5 @@ def get_image():
 def dum_post():
   return 'Never gonna give you up'
 
-socketio.run(app, debug=True, host='0.0.0.0', port=3000)
+if __name__ == "__main__":
+  socketio.run(app, debug=True, host='0.0.0.0', port=3000)
